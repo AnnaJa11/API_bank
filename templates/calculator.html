@@ -9,25 +9,16 @@
   <form method="post" action="/calculator/" enctype=multipart/form-data>
    <div class="container">
      <h2>Currency Calculator</h2><br>
-
-     <label for="conv_value"><b>Amount: </b></label>
-     <input type="text" placeholder="Enter your value" name="title" required><br>
-
-     <label for="from_currency"><b>From currency: </b></label>
+     <label for="from_currency"><b>Choose currency: </b></label>
      <select name="currency" id="from_currency">
-         <option value="dolar_usd">dolar amerykański - USD</option>
-         <option value="dolar_aud">dolar australijski - AUD</option>
-         <option value="dolar_cad">dolar kanadyjski - CAD</option>
-         <option value="euro">euro - EUR</option>
+         <option value="dolar_usd">USD</option>
+         <option value="dolar_aud">AUD</option>
+         <option value="dolar_cad">CAD</option>
+         <option value="euro">EUR</option>
      </select><br>
     
-     <label for="to_currency"><b>To currency: </b></label>
-     <select name="currency" id="to_currency">
-         <option value="dolar_usd">dolar amerykański - USD</option>
-         <option value="dolar_aud">dolar australijski - AUD</option>
-         <option value="dolar_cad">dolar kanadyjski - CAD</option>
-         <option value="euro">euro - EUR</option>
-     </select><br>
+     <label for="conv_value"><b>Your amount: </b></label>
+     <input type="text" placeholder="Enter your value" name="title" required><br>
      
     <input type="button" value="Clear">
     <input type="button" value="Send">
