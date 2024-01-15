@@ -14,7 +14,7 @@ for i in dict_data[0]:
 print(csv_columns)
 
 with open("bank_rates.csv", 'w', encoding='utf8') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
+        writer = csv.DictWriter(csvfile, fieldnames=csv_columns, delimiter=';')
         writer.writeheader()
         for data in dict_data:
             writer.writerow(data)
