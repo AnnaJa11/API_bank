@@ -2,25 +2,24 @@
 
 <title>Currency Calculator</title>
 
-{% block body %}
+{% block content %}
     <h1>Currency Calculator</h1><br>
 
     <form method="post" action="/calc/">  
       <div class="container">
-        <span>Please select</span>
-
-        <select name="user_select">
-            {% for o in data %}
-            <option value="{{ o.ask }}">{{ o.name }}</option>
-            {% endfor %}
+        <label for="codes">Please select:</label>
+        <select name="code" id="codes">
+            {% for code in codes %}
+            <option value="{{ code }}">{{ code }}</option>
+            {% endfor %} 
         </select>
-          
-        <label for="user_amount"><b>Your amount: </b></label>
-        <input type="text" placeholder="Enter your value" name="user_amount" required><br>
-       
+        
+        <label for="amount"><b>Your amount:</b><input type="text" placeholder="Enter your value" name="amount" required></label>
+        
         <button type="submit" class="btn">Count</button>
 
-        <p>{{ result }} (PLN)</p>
+        <br><br><br>
+        <label for="payment"><b>Your payment:</b><input type="text" name="payment"></label> (PLN)
 
       </div>
     </form>
