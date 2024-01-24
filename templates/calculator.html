@@ -1,31 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <title>Currency Calculator</title>
- </head>
+{% extends 'base.html' %} 
 
- <body>
-  <form method="post" action="/calculator/" enctype=multipart/form-data>
-   <div class="container">
-     <h2>Currency Calculator</h2><br>
-     <label for="from_currency"><b>Choose currency: </b></label>
-     <select name="currency" id="from_currency">
-         <option value="dolar_usd">USD</option>
-         <option value="dolar_aud">AUD</option>
-         <option value="dolar_cad">CAD</option>
-         <option value="euro">EUR</option>
-     </select><br>
-    
-     <label for="conv_value"><b>Your amount: </b></label>
-     <input type="text" placeholder="Enter your value" name="title" required><br>
-     
-    <input type="button" value="Clear">
-    <input type="button" value="Send">
-     
-     
-   </div>
-  </form>
+<title>Currency Calculator</title>
 
- </body>
-</html>
+{% block body %}
+    <h1>Currency Calculator</h1><br>
+
+    <form method="post" action="/calc/">  
+      <div class="container">
+        <span>Please select</span>
+
+        <select name="user_select">
+            {% for o in data %}
+            <option value="{{ o.ask }}">{{ o.name }}</option>
+            {% endfor %}
+        </select>
+          
+        <label for="user_amount"><b>Your amount: </b></label>
+        <input type="text" placeholder="Enter your value" name="user_amount" required><br>
+       
+        <button type="submit" class="btn">Count</button>
+
+        <p>{{ result }} (PLN)</p>
+
+      </div>
+    </form>
+{% endblock %}
