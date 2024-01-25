@@ -32,7 +32,7 @@ for i in dict_data:
     ask = (i['ask'])
     asks.append(ask)
 # asks = [4.085, 2.6864, 3.0303, 4.4335, 0.011489, 4.6893, 5.1799, 0.027538, 0.1784, 0.5945, 0.3882, 0.3899, 5.4208]
-     
+
 @app.route('/')
 def home():
     return render_template('base.html')
@@ -45,7 +45,7 @@ def calc():
        user_select = request.form.get("code")
        for item in dict_data:
           if item['code'] == user_select:
-            payment = round((float(item['ask']) * float(amount)), 2)
+            payment = round((item['ask'] * float(amount)), 2)
     return render_template("calculator.html", codes=codes, payment=payment)
  
 
